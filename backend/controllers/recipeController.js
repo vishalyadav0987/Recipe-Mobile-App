@@ -52,7 +52,7 @@ const deleteFavoriteItem = async (req, res) => {
         const { id, userId } = req.params;
         console.log(id,userId);
         
-        const recipe = await RecipeSchema.findOneAndDelete({ id, userId });
+        const recipe = await RecipeSchema.findOneAndDelete({ recipeId:id, userId });
         console.log(recipe);
         if (!recipe) {
             return res.status(404).json({success:false, message: 'Recipe not found' });
