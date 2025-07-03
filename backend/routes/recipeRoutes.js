@@ -10,6 +10,6 @@ router.post('/favorites', saveToFavorite);
 router.get('/favorites/:userId', getAllFavorite);
 
 // DELETE - Remove recipe from favorites
-router.delete('/favorites/:id', deleteFavoriteItem);
+router.delete('/favorites/:id/:userId', deleteFavoriteItem);
 
 module.exports = router;

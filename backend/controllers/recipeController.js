@@ -49,16 +49,15 @@ const getAllFavorite = async (req, res) => {
 
 const deleteFavoriteItem = async (req, res) => {
     try {
-        const { id } = req.params;
-
-        const deletedRecipe = await RecipeSchema.findOneAndDelete({ id });
-        if (!deletedRecipe) {
-            return res.status(404).json({ message: 'Recipe not found in favorites' });
+        const { id, userId } = req.params;
+        const recipe = await RecipeSchema.findOneAndDelete({ id, userId });
+        if (!recipe) {
+            return res.status(404).json({success:false, message: 'Recipe not found' });
         }
+        res.status(200).json({ success:true,message: 'Recipe deleted from favorites' });
 
-        res.status(200).json({ message: 'Recipe removed from favorites', recipe: deletedRecipe });
     } catch (error) {
-        res.status(500).json({ message: 'Error deleting recipe', error: error.message });
+        res.status(500).json({success:false, message: 'Error deleting recipe', error: error.message });
     }
 };
 
