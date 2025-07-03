@@ -1,7 +1,7 @@
 const cron = require("node-cron");
 const https = require('https');
 
-const job = cron.schedule("*/1 * * * *", () => {
+const job = cron.schedule("*/14 * * * *", () => {
   https
     .get(process.env.API_URL, (res) => {
       if (res.statusCode === 200) {
