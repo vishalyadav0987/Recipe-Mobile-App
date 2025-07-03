@@ -30,9 +30,9 @@ const saveToFavorite = async (req, res) => {
         });
 
         const savedRecipe = await newRecipe.save();
-        res.status(201).json({ message: 'Recipe added to favorites', recipe: savedRecipe });
+        res.status(201).json({success:true, message: 'Recipe added to favorites', recipe: savedRecipe });
     } catch (error) {
-        res.status(500).json({ message: 'Error saving recipe', error: error.message });
+        res.status(500).json({success:false, message: 'Error saving recipe', error: error.message });
     }
 };
 
@@ -41,9 +41,9 @@ const getAllFavorite = async (req, res) => {
         const { userId } = req.params;
 
         const favoriteRecipes = await RecipeSchema.find({ userId }).sort({ createdAt: -1 });
-        res.status(200).json({ recipes: favoriteRecipes, count: favoriteRecipes.length });
+        res.status(200).json({success:true, recipes: favoriteRecipes, count: favoriteRecipes.length });
     } catch (error) {
-        res.status(500).json({ message: 'Error fetching favorite recipes', error: error.message });
+        res.status(500).json({ success:false,message: 'Error fetching favorite recipes', error: error.message });
     }
 };
 
