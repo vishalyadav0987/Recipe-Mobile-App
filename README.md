@@ -16,7 +16,7 @@
 
 ## 📸 Screenshots
 
-| Home Page | Feature Page | Mobile View |
+| Home Page | Feature Page | Recipe Page |
 |----------|--------------|-------------|
 | ![Home](./mobile/assets/images/home.jpeg) | ![Feature](./mobile/assets/images/search.jpeg) | ![Mobile](./mobile/assets/images/id.jpeg) |
 
