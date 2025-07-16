@@ -108,8 +108,8 @@ Recipe-App/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/recipe-app.git
-   cd Recipe-App/backend
+   git clone https://github.com/vishalyadav0987/Recipe-Mobile-App.git
+   cd Recipe-Mobile-App/backend
    ```
 
 2. **Install dependencies**
@@ -144,7 +144,7 @@ Recipe-App/
 
 4. **Start the server**
    ```bash
-   npm start
+   npm run dev
    ```
 
 ### 📱 Mobile Setup
